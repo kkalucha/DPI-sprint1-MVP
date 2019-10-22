@@ -1,0 +1,232 @@
+body {
+  background-color: #F5DBCB;
+  font-family: 'Roboto', sans serif;
+  color: #FF595E;
+}
+
+#container {
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: 'Roboto Slab', monospace;
+  text-transform: uppercase;
+  color: #FF595E;
+  text-shadow: -3px -3px 0px #FFA5A5;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 3em;
+    text-shadow: -1px -1px 0px #FFA5A5;
+  }
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 5em;
+    text-shadow: -2px -2px 0px #FFA5A5;
+  }
+}
+
+.ablogo {
+  background-color: #F5DBCB;
+  width: 40px;
+  height: 40px;
+  border: 3px dashed #FF595E;
+  border-radius: 50%;
+  padding: 2px;
+  margin-top: -25px;
+}
+
+.abtext {
+  font-size: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #FF595E;
+}
+
+@media (min-width: 1000px) {
+  .abtext {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #FF595E;
+  }
+}
+
+.child {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.child {
+    display: table-cell;
+}
+
+@media (min-width: 1000px) {
+  .child {
+    vertical-align: middle;
+  }
+}
+
+.price {
+  width: 100%;
+  padding: 5px;
+  font-size: 5em;
+  font-family: 'Roboto Slab', monospace;
+  display: inline-block;
+}
+
+@media (min-width: 1000px) {
+  .price {
+    width: 48%;
+    font-size: 7em;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Roboto', sans serif;
+  font-weight: 300;
+  display: inline-block;
+  line-height: 150%;
+}
+
+@media (min-width: 1000px) {
+  .input {
+    width: 48%;
+    text-align: left;
+    font-size: 2em;
+  }
+}
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: #F5DBCB;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 35%;
+  right: 1px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-color: #FFA5A5 transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #FFA5A5 transparent;
+  top: 15%;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #FFA5A5;
+  background-color: #F5DBCB;
+  padding: 0px 5px 5px 5px;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #FFA5A5;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: #ffe4d3;
+}
+
+input[type=text] {
+  width: 40%;
+  padding: 5px;
+  margin-top: -5px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #F5DBCB;
+  color: #FFA5A5;
+  font-family: 'Roboto', sans serif;
+  font-weight: 300;
+  font-size: 1em;
+  border-bottom: 2px solid #FFA5A5;
+  outline: none;
+}
+
+input[type=text]:focus {
+  background-color: #ffe4d3;
+}
+
+.calculate {
+  width: 110px!important;
+  background: #ffe4d3;
+  padding: 5px 10px;
+  color: #FF595E;
+  font-family: 'Roboto Slab', monospace;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media (min-width: 1000px) {
+  .calculate {
+    width: 150px!important;
+    margin-left: 0px;
+  }
+}
+
+.calculate a {
+  color: #fff !important;
+  font-size: 15px!important;
+  text-shadow: 1px 1px 10px #909df0 !important;
+}
+
+.calculate:hover {
+  background-color: #F5DBCB;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
