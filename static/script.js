@@ -81,15 +81,46 @@ document.addEventListener("click", closeAllSelect);
 }*/
 
 function clickCalculate(elmnt) {
-    $.post('/rec', {
-                neighborhood: document.getElementsByClassName("custom-select")[0].innerText,
-                room_type: document.getElementsByClassName("custom-select")[1].innerText,
-                guests: document.getElementsByClassName("custom-select")[2].innerText
+  document.getElementsByClassName("calculate")[0].innerHTML = "clicked";
+  /* $.post('/plot', {
+                weights: [document.getElementsByName("w1")[0].innerText, 
+                          document.getElementsByName("w2")[0].innerText,
+                          document.getElementsByName("w3")[0].innerText
+                         ],
+                tickers: [document.getElementsByName("t1")[0].innerText,
+                            document.getElementsByName("t2")[0].innerText,
+                            document.getElementsByName("t3")[0].innerText
+                         ]
             }).done(function(response) {
-                document.getElementsByClassName("child price")[0].innerHTML = response['rec'];
+              //$("img").attr("src", "data:image/png;base64," + response['b64encoded']);
+              document.getElementsByClassName("calculate")[0].innerHTML = response['b64encoded'];
+
             }).fail(function() {
-                document.getElementsByClassName("child price")[0].innerHTML = "Error: Could not compute. Did you fill out all the fields?";
-            });
+                document.getElementsByClassName("calculate")[0].innerHTML = "failed";
+            }); */
+  /*var datum = {"weights": [{"w1": ".1"}, {"w2": ".1"}, {"w3": ".8"}], 
+               "tickers": [{"t1": "AAA"}, {"t2": "AAA"}, {"t3": "AAA"}]};*/
+    var datum = {"weights": [$("input[name='w1']").val(), 
+                             $("input[name='w2']").val(), 
+                             $("input[name='w3']").val()], 
+                 "tickers": [$("input[name='t1']").val(), 
+                             $("input[name='t2']").val(), 
+                             $("input[name='t3']").val()]};
+            $.ajax({
+              type: 'POST',
+              url: '/plot',
+              data: JSON.stringify({ Datum : datum }),
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              success: function(data){
+                //$(this).next("img").attr("src", "data:image/png;base64," + "b'" + data['b64encoded']);
+
+                $("img").attr("src", "data:image/png;base64," + data['b64encoded']);
+              },
+              failure: function(errMsg) {
+                    alert(errMsg);
+            }
+          });
 }
 
 var calc;
