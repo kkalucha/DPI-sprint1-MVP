@@ -81,6 +81,26 @@ document.addEventListener("click", closeAllSelect);
 }*/
 
 function clickCalculate(elmnt) {
+  var datum = {"username": $("input[name='w1']").val(), 
+               "password": $("input[name='t1']").val() };
+            $.ajax({
+              type: 'POST',
+              url: '/createuser',
+              data: JSON.stringify({ Datum : datum }),
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              success: function(data){
+                //$(this).next("img").attr("src", "data:image/png;base64," + "b'" + data['b64encoded']);
+                document.getElementsByClassName("calculate")[0].innerHTML = data['response'];
+                //$("img").attr("src", "data:image/png;base64," + data['b64encoded']);
+              },
+              failure: function(errMsg) {
+                    alert(errMsg);
+            }
+          });
+}
+
+/*function clickCalculate(elmnt) {
   document.getElementsByClassName("calculate")[0].innerHTML = "clicked";
   /* $.post('/plot', {
                 weights: [document.getElementsByName("w1")[0].innerText, 
@@ -100,7 +120,7 @@ function clickCalculate(elmnt) {
             }); */
   /*var datum = {"weights": [{"w1": ".1"}, {"w2": ".1"}, {"w3": ".8"}], 
                "tickers": [{"t1": "AAA"}, {"t2": "AAA"}, {"t3": "AAA"}]};*/
-    var datum = {"weights": [$("input[name='w1']").val(), 
+    /*var datum = {"weights": [$("input[name='w1']").val(), 
                              $("input[name='w2']").val(), 
                              $("input[name='w3']").val()], 
                  "tickers": [$("input[name='t1']").val(), 
@@ -121,7 +141,7 @@ function clickCalculate(elmnt) {
                     alert(errMsg);
             }
           });
-}
+}*/
 
 var calc;
 calc = document.getElementsByClassName("calculate")[0];
