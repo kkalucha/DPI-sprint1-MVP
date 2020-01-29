@@ -80,7 +80,7 @@ document.addEventListener("click", closeAllSelect);
   document.getElementsByClassName("child price")[0].innerHTML = '$XYZ';
 }*/
 
-function clickCalculate(elmnt) {
+/*function clickCalculate(elmnt) {
   var datum = {"username": $("input[name='w1']").val(), 
                "password": $("input[name='t1']").val() };
             $.ajax({
@@ -98,9 +98,9 @@ function clickCalculate(elmnt) {
                     alert(errMsg);
             }
           });
-}
+}*/
 
-/*function clickCalculate(elmnt) {
+function clickCalculate(elmnt) {
   document.getElementsByClassName("calculate")[0].innerHTML = "clicked";
   /* $.post('/plot', {
                 weights: [document.getElementsByName("w1")[0].innerText, 
@@ -120,7 +120,7 @@ function clickCalculate(elmnt) {
             }); */
   /*var datum = {"weights": [{"w1": ".1"}, {"w2": ".1"}, {"w3": ".8"}], 
                "tickers": [{"t1": "AAA"}, {"t2": "AAA"}, {"t3": "AAA"}]};*/
-    /*var datum = {"weights": [$("input[name='w1']").val(), 
+    var datum = {"weights": [$("input[name='w1']").val(), 
                              $("input[name='w2']").val(), 
                              $("input[name='w3']").val()], 
                  "tickers": [$("input[name='t1']").val(), 
@@ -141,7 +141,7 @@ function clickCalculate(elmnt) {
                     alert(errMsg);
             }
           });
-}*/
+}
 
 var calc;
 calc = document.getElementsByClassName("calculate")[0];
