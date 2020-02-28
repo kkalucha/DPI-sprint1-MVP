@@ -98,6 +98,7 @@ function clickCalculate(elmnt) {
                     alert(errMsg);
             }
           });
+}
 
 /*function clickCalculate(elmnt) {
   document.getElementsByClassName("calculate")[0].innerHTML = "clicked";
