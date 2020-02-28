@@ -158,4 +158,3 @@ calc.addEventListener("click", clickCalculate);
 var sidebar;
 sidebar = document.getElementsByClassName("openSideNav")[0];
 sidebar.addEventListener("click", openNav);
-
