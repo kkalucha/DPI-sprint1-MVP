@@ -12,12 +12,13 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 
 app = Flask(__name__)
+"""
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 from models import User
-
+"""
 def portfolio(tickers,weights,backtest_window="2019-09-04",benchmark="SPY"):
     if weights.sum()!=1:
         print("Incorrect Weight Vector!")
