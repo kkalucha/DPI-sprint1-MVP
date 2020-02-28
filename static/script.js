@@ -1,9 +1,9 @@
-function openNav() {
+function openNav(elmnt) {
   document.getElementById("mySidenav").style.width = "200px";
 }
 
 /* Set the width of the side navigation to 0 */
-function closeNav() {
+function closeNav(elmnt) {
   document.getElementById("mySidenav").style.width = "0";
 }
 
@@ -106,7 +106,7 @@ function clickCalculate(elmnt) {
               failure: function(errMsg) {
                     alert(errMsg);
             }
-          });
+          });}
 
 /*function clickCalculate(elmnt) {
   document.getElementsByClassName("calculate")[0].innerHTML = "clicked";
@@ -154,3 +154,8 @@ function clickCalculate(elmnt) {
 var calc;
 calc = document.getElementsByClassName("calculate")[0];
 calc.addEventListener("click", clickCalculate);
+
+var sidebar;
+sidebar = document.getElementsByClassName("openSideNav")[0];
+sidebar.addEventListener("click", openNav);
+
